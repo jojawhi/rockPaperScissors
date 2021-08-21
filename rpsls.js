@@ -117,12 +117,16 @@ function game() {
 game();
 */
 
+let result = "";
+
 //Buttons
 
 const rockBtn = document.querySelector("#rockBtn");
 rockBtn.addEventListener("click", () => {
     playerSelection = "rock";
-    console.log(playerSelection);
+    playRound(computerPlay(), playerSelection);
+    compScoreText.textContent = computerScore;
+    playerScoreText.textContent = playerScore;
 });
 
 const paperBtn = document.querySelector("#paperBtn");
