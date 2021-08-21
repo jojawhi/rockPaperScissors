@@ -1,5 +1,5 @@
 // array of options
-const options = ["rock", "paper", "scissors", "lizard", "spock"];
+const options = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
 
 // pre-declared empty variables for storing play selections
 let computerSelection;
@@ -20,6 +20,7 @@ function random(mn, mx) {
 function computerPlay() {
     computerSelection = options[random(0, 5)];
     return computerSelection;
+    
 }
 
 /*
@@ -127,6 +128,7 @@ rockBtn.addEventListener("click", () => {
     playerSelection = "Rock";
     playRound(computerPlay(), playerSelection);
     showPlayerPlay(playerSelection);
+    showCompPlay(computerSelection);
     compScoreText.textContent = computerScore;
     playerScoreText.textContent = playerScore;
 });
@@ -177,11 +179,20 @@ playerScoreBox.appendChild(playerScoreText);
 
 const playerPlay = document.querySelector("#playerPlay");
 
-
 function showPlayerPlay(playerSelection) {
 
     const playerPlayIcon = document.createElement("img");
     playerPlayIcon.setAttribute('src', `img/${playerSelection}.svg`);
+    playerPlayIcon.setAttribute('id', 'playerPlayIcon');
     playerPlay.appendChild(playerPlayIcon);
+
+}
+
+function showCompPlay(computerSelection) {
+
+    const compPlayIcon = document.createElement("img");
+    compPlayIcon.setAttribute('src', `img/${computerSelection}.svg`);
+    compPlayIcon.setAttribute('id', 'compPlayIcon');
+    compPlay.appendChild(compPlayIcon);
 
 }
