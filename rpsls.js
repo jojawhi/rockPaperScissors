@@ -9,6 +9,7 @@ let playerSelection;
 let computerScore = 0;
 let playerScore = 0;
 
+let result = "";
 
 // function to generate a random number
 function random(mn, mx) {
@@ -117,39 +118,40 @@ function game() {
 game();
 */
 
-let result = "";
+
 
 //Buttons
 
 const rockBtn = document.querySelector("#rockBtn");
 rockBtn.addEventListener("click", () => {
-    playerSelection = "rock";
+    playerSelection = "Rock";
     playRound(computerPlay(), playerSelection);
+    showPlayerPlay(playerSelection);
     compScoreText.textContent = computerScore;
     playerScoreText.textContent = playerScore;
 });
 
 const paperBtn = document.querySelector("#paperBtn");
 paperBtn.addEventListener("click", () => {
-    playerSelection = "paper";
+    playerSelection = "Paper";
     console.log(playerSelection);
 });
 
 const scissorsBtn = document.querySelector("#scissorsBtn");
 scissorsBtn.addEventListener("click", () => {
-    playerSelection = "scissors";
+    playerSelection = "Scissors";
     console.log(playerSelection);
 });
 
 const lizardBtn = document.querySelector("#lizardBtn");
 lizardBtn.addEventListener("click", () => {
-    playerSelection = "lizard";
+    playerSelection = "Lizard";
     console.log(playerSelection);
 });
 
 const spockBtn = document.querySelector("#spockBtn");
 spockBtn.addEventListener("click", () => {
-    playerSelection = "spock";
+    playerSelection = "Spock";
     console.log(playerSelection);
 });
 
@@ -170,3 +172,16 @@ const playerScoreText = document.createElement("p");
 playerScoreText.textContent = playerScore;
 
 playerScoreBox.appendChild(playerScoreText);
+
+// Plays
+
+const playerPlay = document.querySelector("#playerPlay");
+
+
+function showPlayerPlay(playerSelection) {
+
+    const playerPlayIcon = document.createElement("img");
+    playerPlayIcon.setAttribute('src', `img/${playerSelection}.svg`);
+    playerPlay.appendChild(playerPlayIcon);
+
+}
