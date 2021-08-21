@@ -1,5 +1,6 @@
 :root {
-    --neutral-100: hsl(10, 2%, 90%);
+    --neutral-100: hsl(20, 5%, 90%);
+    --neutral-700: hsl(20, 5%, 25%);
 }
 
 *,
@@ -50,13 +51,14 @@ body,
     background: red;
 }
 
-#userPlay {
-
+#userPlay img,
+#compPlay img {
+    height: 100%;
 }
 
 #vsBox {
     height: 11rem;
-    width: 20%;
+    width: 11%;
     background: magenta;
 }
 
@@ -72,4 +74,25 @@ body,
 
 .icon {
     width: 100%;
+}
+
+.scoreBox {
+    height: 11rem;
+    width: 7%;
+    background: magenta;
+}
+
+.choiceBtn {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    border-radius: 50%;
+    background:var(--neutral-100);
+    border: none;
+}
+
+.choiceBtn:hover,
+.choiceBtn:focus {
+    border: 3px solid yellow;
+    background: var(--neutral-700);
 }

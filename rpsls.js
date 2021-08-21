@@ -21,6 +21,7 @@ function computerPlay() {
     return computerSelection;
 }
 
+/*
 // function to determine user selection, second parameter of playRound function
 function userPlay() {
 
@@ -28,7 +29,7 @@ function userPlay() {
     return playerSelection;
 
 }
-
+*/
 
 //single round function, takes the computerPlay and userPlay functions as arguments
 function playRound(comp, player) {
@@ -97,7 +98,7 @@ function playRound(comp, player) {
             return "The computer also chose " + playerSelection + ". " + "It's a tie!";
         }
 }
-
+/*
 // the game function, which loops 5 times and runs the playRound function each time, running results to the console
 function game() {
     for (let i = 0; i < 5; i++) {
@@ -114,3 +115,54 @@ function game() {
 }
 
 game();
+*/
+
+//Buttons
+
+const rockBtn = document.querySelector("#rockBtn");
+rockBtn.addEventListener("click", () => {
+    playerSelection = "rock";
+    console.log(playerSelection);
+});
+
+const paperBtn = document.querySelector("#paperBtn");
+paperBtn.addEventListener("click", () => {
+    playerSelection = "paper";
+    console.log(playerSelection);
+});
+
+const scissorsBtn = document.querySelector("#scissorsBtn");
+scissorsBtn.addEventListener("click", () => {
+    playerSelection = "scissors";
+    console.log(playerSelection);
+});
+
+const lizardBtn = document.querySelector("#lizardBtn");
+lizardBtn.addEventListener("click", () => {
+    playerSelection = "lizard";
+    console.log(playerSelection);
+});
+
+const spockBtn = document.querySelector("#spockBtn");
+spockBtn.addEventListener("click", () => {
+    playerSelection = "spock";
+    console.log(playerSelection);
+});
+
+const buttons = document.querySelectorAll(".choiceButton");
+
+//Score boxes
+
+const compScoreBox = document.querySelector("#compScoreBox");
+
+const compScoreText = document.createElement("p");
+compScoreText.textContent = computerScore;
+
+compScoreBox.appendChild(compScoreText);
+
+const userScoreBox = document.querySelector("#userScoreBox");
+
+const playerScoreText = document.createElement("p");
+playerScoreText.textContent = playerScore;
+
+playerScoreBox.appendChild(playerScoreText);
