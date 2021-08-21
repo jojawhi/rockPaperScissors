@@ -136,25 +136,41 @@ rockBtn.addEventListener("click", () => {
 const paperBtn = document.querySelector("#paperBtn");
 paperBtn.addEventListener("click", () => {
     playerSelection = "Paper";
-    console.log(playerSelection);
+    playRound(computerPlay(), playerSelection);
+    showPlayerPlay(playerSelection);
+    showCompPlay(computerSelection);
+    compScoreText.textContent = computerScore;
+    playerScoreText.textContent = playerScore;
 });
 
 const scissorsBtn = document.querySelector("#scissorsBtn");
 scissorsBtn.addEventListener("click", () => {
     playerSelection = "Scissors";
-    console.log(playerSelection);
+    playRound(computerPlay(), playerSelection);
+    showPlayerPlay(playerSelection);
+    showCompPlay(computerSelection);
+    compScoreText.textContent = computerScore;
+    playerScoreText.textContent = playerScore;
 });
 
 const lizardBtn = document.querySelector("#lizardBtn");
 lizardBtn.addEventListener("click", () => {
     playerSelection = "Lizard";
-    console.log(playerSelection);
+    playRound(computerPlay(), playerSelection);
+    showPlayerPlay(playerSelection);
+    showCompPlay(computerSelection);
+    compScoreText.textContent = computerScore;
+    playerScoreText.textContent = playerScore;
 });
 
 const spockBtn = document.querySelector("#spockBtn");
 spockBtn.addEventListener("click", () => {
     playerSelection = "Spock";
-    console.log(playerSelection);
+    playRound(computerPlay(), playerSelection);
+    showPlayerPlay(playerSelection);
+    showCompPlay(computerSelection);
+    compScoreText.textContent = computerScore;
+    playerScoreText.textContent = playerScore;
 });
 
 const buttons = document.querySelectorAll(".choiceButton");
@@ -181,18 +197,14 @@ const playerPlay = document.querySelector("#playerPlay");
 
 function showPlayerPlay(playerSelection) {
 
-    const playerPlayIcon = document.createElement("img");
+    const playerPlayIcon = document.querySelector("#playerPlayIcon");
     playerPlayIcon.setAttribute('src', `img/${playerSelection}.svg`);
-    playerPlayIcon.setAttribute('id', 'playerPlayIcon');
-    playerPlay.appendChild(playerPlayIcon);
 
 }
 
 function showCompPlay(computerSelection) {
 
-    const compPlayIcon = document.createElement("img");
+    const compPlayIcon = document.querySelector("#compPlayIcon");
     compPlayIcon.setAttribute('src', `img/${computerSelection}.svg`);
-    compPlayIcon.setAttribute('id', 'compPlayIcon');
-    compPlay.appendChild(compPlayIcon);
 
 }
