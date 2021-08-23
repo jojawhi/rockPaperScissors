@@ -177,6 +177,8 @@ rockBtn.addEventListener("click", () => {
     compScoreText.textContent = computerScore;
     playerScoreText.textContent = playerScore;
     fadeIn();
+    setScoreColour();
+    disableButtons();
 });
 
 const paperBtn = document.querySelector("#paperBtn");
@@ -187,6 +189,9 @@ paperBtn.addEventListener("click", () => {
     showCompPlay(computerSelection);
     compScoreText.textContent = computerScore;
     playerScoreText.textContent = playerScore;
+    fadeIn();
+    setScoreColour();
+    disableButtons();
 });
 
 const scissorsBtn = document.querySelector("#scissorsBtn");
@@ -197,6 +202,9 @@ scissorsBtn.addEventListener("click", () => {
     showCompPlay(computerSelection);
     compScoreText.textContent = computerScore;
     playerScoreText.textContent = playerScore;
+    fadeIn();
+    setScoreColour();
+    disableButtons();
 });
 
 const lizardBtn = document.querySelector("#lizardBtn");
@@ -207,6 +215,9 @@ lizardBtn.addEventListener("click", () => {
     showCompPlay(computerSelection);
     compScoreText.textContent = computerScore;
     playerScoreText.textContent = playerScore;
+    fadeIn();
+    setScoreColour();
+    disableButtons();
 });
 
 const spockBtn = document.querySelector("#spockBtn");
@@ -217,6 +228,9 @@ spockBtn.addEventListener("click", () => {
     showCompPlay(computerSelection);
     compScoreText.textContent = computerScore;
     playerScoreText.textContent = playerScore;
+    fadeIn();
+    setScoreColour();
+    disableButtons();
 });
 
 const buttons = document.querySelectorAll(".choiceButton");
@@ -230,7 +244,7 @@ compScoreText.textContent = computerScore;
 
 compScoreBox.appendChild(compScoreText);
 
-const userScoreBox = document.querySelector("#userScoreBox");
+const playerScoreBox = document.querySelector("#playerScoreBox");
 
 const playerScoreText = document.createElement("p");
 playerScoreText.textContent = playerScore;
@@ -266,17 +280,52 @@ function fadeIn() {
 
 }
 
-// Score colors
+// Score colors - needed to create playerWin and compWin variables to make this work
 
 function setScoreColour() {
-    if (playerWin == true) {
+    if (playerWin === true) {
         playerScoreText.style.color = "green";
         compScoreText.style.color = "red";
-    } else if (compWin = true) {
+    } else if (compWin === true) {
         playerScoreText.style.color = "red";
         compScoreText.style.color = "green";
-    } else {
+    } else if (compWin === false && playerWin === false ) {
         playerScoreText.style.color = "orange";
         compScoreText.style.color = "orange";
     }
+}
+
+// Deactivate buttons until fade animation is complete to prevent early clicking
+
+function disableButtons() {
+    rockBtn.setAttribute("disabled", true);
+    rockBtn.classList.add("disabledBtn");
+    setTimeout(function() {
+        rockBtn.removeAttribute("disabled", true);
+        rockBtn.classList.remove("disabledBtn");
+    }, 4000);
+    paperBtn.setAttribute("disabled", true);
+    paperBtn.classList.add("disabledBtn");
+    setTimeout(function() {
+        paperBtn.removeAttribute("disabled", true);
+        paperBtn.classList.remove("disabledBtn");
+    }, 4000);
+    scissorsBtn.setAttribute("disabled", true);
+    scissorsBtn.classList.add("disabledBtn");
+    setTimeout(function() {
+        scissorsBtn.removeAttribute("disabled", true);
+        scissorsBtn.classList.remove("disabledBtn");
+    }, 4000);
+    lizardBtn.setAttribute("disabled", true);
+    lizardBtn.classList.add("disabledBtn");
+    setTimeout(function() {
+        lizardBtn.removeAttribute("disabled", true);
+        lizardBtn.classList.remove("disabledBtn");
+    }, 4000);
+    spockBtn.setAttribute("disabled", true);
+    spockBtn.classList.add("disabledBtn");
+    setTimeout(function() {
+        spockBtn.removeAttribute("disabled", true);
+        spockBtn.classList.remove("disabledBtn");
+    }, 4000);
 }
