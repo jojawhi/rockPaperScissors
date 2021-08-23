@@ -34,69 +34,114 @@ function userPlay() {
 */
 
 //single round function, takes the computerPlay and userPlay functions as arguments
+let playerWin = "";
+let compWin = "";
+
 function playRound(comp, player) {
 
         if (comp.toLowerCase() == "rock" && player.toLowerCase() == "scissors") {
             computerScore++;
-            return "Computer chose Rock, which crushes your Scissors! You lose!";                
+            compWin = true;
+            playerWin = false;
+            return "Computer chose Rock, which crushes your Scissors! You lose!";              
         } else if (comp.toLowerCase() == "rock" && player.toLowerCase() == "lizard") {
             computerScore++;
+            compWin = true;
+            playerWin = false;
             return "Computer chose Rock, which crushes your Lizard! You lose!";
         } else if (comp.toLowerCase() == "scissors" && player.toLowerCase() == "paper") {
             computerScore++;
+            compWin = true;
+            playerWin = false;
             return "Computer chose Scissors, which cuts your Paper! You lose!";
         } else if (comp.toLowerCase() == "scissors" && player.toLowerCase() == "lizard") {
             computerScore++;
+            compWin = true;
+            playerWin = false;
             return "Computer chose Scissors, which decapitates your Lizard! You lose!";
         } else if (comp.toLowerCase() == "paper" && player.toLowerCase() == "rock") {
             computerScore++;
+            compWin = true;
+            playerWin = false;
             return "Computer chose Paper, which covers your Rock! You lose!";                    
         } else if (comp.toLowerCase() == "paper" && player.toLowerCase() == "spock") {
             computerScore++;
+            compWin = true;
+            playerWin = false;
             return "Computer chose Paper, which disproves your Spock! You lose!";                    
         } else if (comp.toLowerCase() == "lizard" && player.toLowerCase() == "spock") {
             computerScore++;
+            compWin = true;
+            playerWin = false;
             return "Computer chose Lizard, which poisons your Spock! You lose!";                    
         } else if (comp.toLowerCase() == "lizard" && player.toLowerCase() == "paper") {
             computerScore++;
+            compWin = true;
+            playerWin = false;
             return "Computer chose Lizard, which eats your Paper! You lose!";                    
         } else if (comp.toLowerCase() == "spock" && player.toLowerCase() == "rock") {
             computerScore++;
+            compWin = true;
+            playerWin = false;
             return "Computer chose Spock, which vaporizes your Rock! You lose!";                    
         } else if (comp.toLowerCase() == "spock" && player.toLowerCase() == "scissors") {
             computerScore++;
+            compWin = true;
+            playerWin = false;
             return "Computer chose Spock, which smashes your Scissors! You lose!";                    
         } else if (comp.toLowerCase() == "rock" && player.toLowerCase() == "paper") {
             playerScore++;
+            playerWin = true;
+            compWin = false;
             return "Your Paper covers the computer's Rock! You win!";                   
         } else if (comp.toLowerCase() == "spock" && player.toLowerCase() == "paper") {
             playerScore++;
+            playerWin = true;
+            compWin = false;
             return "Your Paper disproves the computer's Spock! You win!";                   
         } else if (comp.toLowerCase() == "paper" && player.toLowerCase() == "scissors") {
             playerScore++;
+            playerWin = true;
+            compWin = false;
             return "Your Scissors beats the computer's Paper! You win!";
         } else if (comp.toLowerCase() == "lizard" && player.toLowerCase() == "scissors") {
             playerScore++;
+            playerWin = true;
+            compWin = false;
             return "Your Scissors decapitates the computer's Lizard! You win!";
         } else if (comp.toLowerCase() == "scissors" && player.toLowerCase() == "rock") {
             playerScore++;
+            playerWin = true;
+            compWin = false;
             return "Your Rock beats the computer's Scissors! You win!";
         } else if (comp.toLowerCase() == "lizard" && player.toLowerCase() == "rock") {
             playerScore++;
+            playerWin = true;
+            compWin = false;
             return "Your Rock crushes the computer's Lizard! You win!";
         } else if (comp.toLowerCase() == "spock" && player.toLowerCase() == "lizard") {
             playerScore++;
+            playerWin = true;
+            compWin = false;
             return "Your Lizard poisons the computer's Spock! You win!";
         } else if (comp.toLowerCase() == "paper" && player.toLowerCase() == "lizard") {
             playerScore++;
+            playerWin = true;
+            compWin = false;
             return "Your Lizard eats the computer's Paper! You win!";
         } else if (comp.toLowerCase() == "rock" && player.toLowerCase() == "spock") {
             playerScore++;
+            playerWin = true;
+            compWin = false;
             return "Your Spock vaporizes the computer's Rock! You win!";
         } else if (comp.toLowerCase() == "scissors" && player.toLowerCase() == "spock") {
             playerScore++;
+            playerWin = true;
+            compWin = false;
             return "Your Spock smashes the computer's Scissors! You win!";
         } else if (comp.toLowerCase() == player.toLowerCase()) {
+            playerWin = false;
+            compWin = false;
             return "The computer also chose " + playerSelection + ". " + "It's a tie!";
         }
 }
@@ -131,6 +176,7 @@ rockBtn.addEventListener("click", () => {
     showCompPlay(computerSelection);
     compScoreText.textContent = computerScore;
     playerScoreText.textContent = playerScore;
+    fadeIn();
 });
 
 const paperBtn = document.querySelector("#paperBtn");
@@ -194,6 +240,7 @@ playerScoreBox.appendChild(playerScoreText);
 // Plays
 
 const playerPlay = document.querySelector("#playerPlay");
+const compPlay = document.querySelector("#compPlay");
 
 function showPlayerPlay(playerSelection) {
 
@@ -207,4 +254,29 @@ function showCompPlay(computerSelection) {
     const compPlayIcon = document.querySelector("#compPlayIcon");
     compPlayIcon.setAttribute('src', `img/${computerSelection}.svg`);
 
+}
+
+// Fades
+
+function fadeIn() {
+    playerPlay.classList.add("fadeIn");
+    setTimeout(function() {playerPlay.classList.remove("fadeIn");}, 4000);
+    compPlay.classList.add("fadeIn");
+    setTimeout(function() {compPlay.classList.remove("fadeIn");}, 4000);
+
+}
+
+// Score colors
+
+function setScoreColour() {
+    if (playerWin == true) {
+        playerScoreText.style.color = "green";
+        compScoreText.style.color = "red";
+    } else if (compWin = true) {
+        playerScoreText.style.color = "red";
+        compScoreText.style.color = "green";
+    } else {
+        playerScoreText.style.color = "orange";
+        compScoreText.style.color = "orange";
+    }
 }

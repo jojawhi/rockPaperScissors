@@ -113,6 +113,21 @@ body,
     width: 100%;
 }
 
+.fade {
+    opacity: 0;
+}
+
+.fadeIn {
+    animation: fadeInOut 4s linear forwards;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
 .scoreBox {
     display: flex;
     flex-direction: column;
