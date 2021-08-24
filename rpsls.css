@@ -4,11 +4,11 @@
     --neutral-100: hsl(20, 5%, 90%);
     --neutral-300: hsl(20, 5%, 87%);
     --neutral-500: hsl(20, 5%, 75%);
-    --neutral-700: hsl(20, 5%, 25%);
+    --neutral-700: hsl(20, 5%, 50%);
     --blue-100: hsl(200, 80%, 80%);
-    --green-100: hsl(75, 80%, 80%);
-    --red-100: hsl(5, 50%, 75%);
-    --beige-100: hsl(45, 65%, 90%);
+    --green-100: hsl(75, 50%, 80%);
+    --red-100: hsl(45, 60%, 80%);
+    --beige-100: hsl(45, 40%, 90%);
 }
 
 *,
@@ -98,6 +98,7 @@ body,
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 2rem;
 }
 
 #playerPlayIcon,
@@ -113,7 +114,16 @@ body,
     align-items: center;
     height: 100%;
     width: 11%;
+    font-size: 1.5rem;
     background: var(--neutral-100);
+}
+
+#resultContainer {
+    height: auto;
+    width: 85%;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1.5rem;
 }
 
 .play {
@@ -139,6 +149,17 @@ body,
 }
 
 @keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.longFade {
+    animation: longFade 6s linear forwards;
+}
+
+@keyframes longFade {
     0% { opacity: 0; }
     10% { opacity: 1; }
     80% { opacity: 1; }
@@ -184,8 +205,16 @@ body,
 
 .choiceBtn:hover,
 .choiceBtn:focus {
-    border: 3px solid yellow;
-    background: var(--neutral-700);
+
+    animation-name: scale;
+    animation-duration: 1s;
+
+}
+
+@keyframes scale {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.025); }
+    100% { transform: scale(1); }
 }
 
 #rockBtn {
