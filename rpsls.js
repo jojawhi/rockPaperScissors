@@ -345,3 +345,4 @@ const resultText = document.querySelector("#resultText");
 function setResult() {
     resultText.textContent = result;
 }
+
