@@ -4,11 +4,16 @@
     --neutral-100: hsl(20, 5%, 90%);
     --neutral-300: hsl(20, 5%, 87%);
     --neutral-500: hsl(20, 5%, 75%);
+    --neutral-550: hsl(20, 5%, 60%);
     --neutral-700: hsl(20, 5%, 50%);
     --blue-100: hsl(200, 80%, 80%);
+    --blue-150: hsl(200, 80%, 65%);
     --green-100: hsl(75, 50%, 80%);
-    --red-100: hsl(45, 60%, 80%);
+    --green-150: hsl(75, 50%, 65%);
+    --yellow-100: hsl(40, 90%, 80%);
+    --yellow-150: hsl(40, 90%, 65%);
     --beige-100: hsl(45, 40%, 90%);
+    --beige-150: hsl(45, 40%, 80%);
 }
 
 *,
@@ -182,7 +187,7 @@ body,
     100% { opacity: 0; }
 }
 
-.disabledBtn {
+#buttonContainer .disabledBtn {
     background: var(--neutral-700);
     opacity: 80%;
 }
@@ -217,41 +222,75 @@ body,
     border-radius: 50%;
     background:var(--neutral-100);
     border: none;
+    transition: 
+        transform 0.5s,
+        background-color 0.5s;
 }
 
 .choiceBtn:hover,
 .choiceBtn:focus {
 
+    transform: scale(1.05);
+    /*
     animation-name: scale;
     animation-duration: 1s;
+    */
 
 }
 
+/*
 @keyframes scale {
     0% { transform: scale(1); }
-    50% { transform: scale(1.025); }
-    100% { transform: scale(1); }
+    100% { transform: scale(1.025); }
 }
+*/
 
 #rockBtn {
     background: var(--neutral-500);
+}
+
+#rockBtn:hover,
+#rockBtn:focus {
+    background: var(--neutral-550);
 }
 
 #paperBtn {
     background: var(--beige-100);
 }
 
+#paperBtn:hover,
+#paperBtn:focus {
+    background: var(--beige-150);
+}
+
 #scissorsBtn {
-    background: var(--red-100);
+    background: var(--yellow-100);
+}
+
+#scissorsBtn:hover,
+#scissorsBtn:focus {
+    background: var(--yellow-150);
 }
 
 #lizardBtn {
     background: var(--green-100);
 }
 
+#lizardBtn:hover,
+#lizardBtn:focus {
+    background: var(--green-150);
+}
+
 #spockBtn {
     background: var(--blue-100);
 }
+
+#spockBtn:hover,
+#spockBtn:focus {
+    background: var(--blue-150);
+}
+
+/*Media Queries*/
 
 @media only screen and (min-width: 480px) {
 
