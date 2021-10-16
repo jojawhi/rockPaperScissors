@@ -282,8 +282,8 @@ function fadeIn() {
     setTimeout(function() {playerPlay.classList.remove("fadeIn");}, 4000);
     compPlay.classList.add("fadeIn");
     setTimeout(function() {compPlay.classList.remove("fadeIn");}, 4000);
-    resultContainer.classList.add("longFade");
-    setTimeout(function() {resultContainer.classList.remove("longFade");}, 6000);
+    resultText.classList.add("fadeIn");
+    setTimeout(function() {resultText.classList.remove("fadeIn");}, 4000);
 }
 
 // Score colors - needed to create playerWin and compWin variables to make this work

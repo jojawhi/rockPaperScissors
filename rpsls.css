@@ -84,7 +84,7 @@ body,
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 25%;
+    height: auto;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -182,17 +182,6 @@ body,
     100% { opacity: 0; }
 }
 
-.longFade {
-    animation: longFade 4s linear forwards;
-}
-
-@keyframes longFade {
-    0% { opacity: 0; }
-    10% { opacity: 1; }
-    80% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
 .disabledBtn {
     background: var(--neutral-700);
     opacity: 80%;
@@ -262,4 +251,68 @@ body,
 
 #spockBtn {
     background: var(--blue-100);
+}
+
+@media only screen and (min-width: 480px) {
+
+    .choice {
+        height: 4rem;
+        width: 4rem;
+    }
+
+    #resultText {
+        font-size: 1.5rem;
+    }
+
+}
+
+@media only screen and (min-width: 600px) {
+
+    #middleContainer {
+        padding-bottom: 1rem;
+    }
+
+    .choice {
+        height: 5rem;
+        width: 5rem;
+    }
+
+}
+
+@media only screen and (min-width: 800px) {
+
+    #middleContainer {
+        padding-bottom: 3rem;
+    }
+
+    .choice {
+        height: 7rem;
+        width: 7rem;
+    }
+
+    #resultText {
+        font-size: 2rem;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+    #pageContainer {
+        height: 100%;
+        width: 75%;
+        max-height: 1000px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    #middleContainer {
+        padding-bottom: 3rem;
+    }
+
+    .choice {
+        height: 10rem;
+        width: 10rem;
+    }
+
 }
