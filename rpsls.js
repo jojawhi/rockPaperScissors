@@ -33,7 +33,15 @@ function userPlay() {
 }
 */
 
+//Results
+
+const playerWinText = document.querySelector("#playerWinText");
+const playerLoseText = document.querySelector("#playerLoseText");
+const tieText = document.querySelector("#tieText");
+const compWinRockScissors = document.querySelector("#compWinRockScissors");
+
 //single round function, takes the computerPlay and userPlay functions as arguments
+
 let playerWin = "";
 let compWin = "";
 
@@ -43,7 +51,7 @@ function playRound(comp, player) {
             computerScore++;
             compWin = true;
             playerWin = false;
-            result = "Computer's Rock CRUSHES your Scissors! You lose!";              
+            result = compWinRockScissors.innerHTML;          
         } else if (comp.toLowerCase() == "rock" && player.toLowerCase() == "lizard") {
             computerScore++;
             compWin = true;
@@ -284,6 +292,12 @@ function fadeIn() {
     setTimeout(function() {compPlay.classList.remove("fadeIn");}, 4000);
     resultText.classList.add("fadeIn");
     setTimeout(function() {resultText.classList.remove("fadeIn");}, 4000);
+    playerWinText.classList.add("fadeIn");
+    setTimeout(function() {playerWinText.classList.remove("fadeIn");}, 4000);
+    playerLoseText.classList.add("fadeIn");
+    setTimeout(function() {playerLoseText.classList.remove("fadeIn");}, 4000);
+    tieText.classList.add("fadeIn");
+    setTimeout(function() {tieText.classList.remove("fadeIn");}, 4000);
 }
 
 // Score colors - needed to create playerWin and compWin variables to make this work
@@ -343,6 +357,23 @@ const resultText = document.querySelector("#resultText");
 
 
 function setResult() {
+
+    if (playerWin == true) {
+        playerWinText.classList.remove("hidden");
+        setTimeout(function() {
+            playerWinText.classList.add("hidden");
+        }, 4000);
+    } else if (compWin == true) {
+        playerLoseText.classList.remove("hidden");
+        setTimeout(function() {
+            playerLoseText.classList.add("hidden");
+        }, 4000);
+    } else {
+        tieText.classList.remove("hidden");
+        setTimeout(function() {
+            tieText.classList.add("hidden");
+        }, 4000);
+    }
     resultText.textContent = result;
 }
 

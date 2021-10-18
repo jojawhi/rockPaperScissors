@@ -1,19 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 :root {
+    --neutral-50: hsl(20, 5%, 95%);
     --neutral-100: hsl(20, 5%, 90%);
     --neutral-300: hsl(20, 5%, 87%);
     --neutral-500: hsl(20, 5%, 75%);
     --neutral-550: hsl(20, 5%, 60%);
     --neutral-700: hsl(20, 5%, 50%);
+    --netural-800: hsl(20, 10%, 10%);
     --blue-100: hsl(200, 80%, 80%);
     --blue-150: hsl(200, 80%, 65%);
     --green-100: hsl(75, 50%, 80%);
     --green-150: hsl(75, 50%, 65%);
+    --green-200: hsl(110, 90%, 45%);
     --yellow-100: hsl(40, 90%, 80%);
     --yellow-150: hsl(40, 90%, 65%);
+    --yellow-200: hsl(44, 90%, 45%);
     --beige-100: hsl(45, 40%, 90%);
     --beige-150: hsl(45, 40%, 80%);
+    --beige-200: hsl(45, 40%, 65%);
+    --red-100: hsl(5, 85%, 55%);
 }
 
 *,
@@ -35,6 +41,10 @@ body,
     padding: 0;
     background: var(--neutral-100);
     font-family: "Poppins", sans-serif;
+}
+
+#pageContainer {
+    padding: 10px;
 }
 
 #titleContainer {
@@ -92,7 +102,7 @@ body,
     height: auto;
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding-bottom: 1rem;
 }
 
 #headingContainer {
@@ -156,6 +166,80 @@ body,
     text-align: center;
     margin: 0 auto;
     font-size: 1rem;
+}
+
+#resultText {
+    font-size: 1rem;
+}
+
+#resultContainer p {
+    font-size: 1.25rem;
+    line-height: 2rem;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+.grey {
+    color: var(--neutral-550);
+    background: var(--neutral-50);
+    text-shadow: 0px 0px 3px var(--neutral-700);
+    border: 2px var(--neutral-550) solid;
+    border-radius: 8px;
+    padding: 4px 12px;
+}
+
+.beige {
+    color: var(--beige-200);
+    background: var(--neutral-50);
+    text-shadow: 0px 0px 2px var(--neutral-700);
+    border: 2px var(--beige-200) solid;
+    border-radius: 8px;
+    padding: 4px 12px;
+}
+
+.yellow {
+    color: var(--yellow-200);
+    background: var(--neutral-50);
+    text-shadow: 0px 0px 2px var(--neutral-700);
+    border: 2px var(--yellow-200) solid;
+    border-radius: 8px;
+    padding: 4px 12px;
+}
+
+.green {
+    color: var(--green-150);
+    background: var(--neutral-50);
+    text-shadow: 0px 0px 2px var(--neutral-700);
+    border: 2px var(--green-150) solid;
+    border-radius: 8px;
+    padding: 4px 12px;
+}
+
+.blue {
+    color: var(--blue-150);
+    background: var(--neutral-50);
+    text-shadow: 0px 0px 2px var(--neutral-700);
+    border: 2px var(--blue-150) solid;
+    border-radius: 8px;
+    padding: 4px 12px;
+}
+
+.win {
+    color: var(--green-200);
+}
+
+.lose {
+    color: var(--red-100);
+}
+
+.tie {
+    color: var(--yellow-200);
+}
+
+.hidden {
+    display: none;
 }
 
 .play {
@@ -339,9 +423,9 @@ body,
 
     #pageContainer {
         height: 100%;
-        width: 75%;
+        width: 85%;
         max-height: 1000px;
-        max-width: 900px;
+        max-width: 1050px;
         margin: 0 auto;
     }
 
