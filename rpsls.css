@@ -283,7 +283,7 @@ body,
     align-items: center;
     text-align: center;
     height: 100%;
-    width: auto;
+    width: 90%;
     padding: 0 10px;
     background: var(--neutral-100);
 }
@@ -291,11 +291,12 @@ body,
 .scoreBox p {
     margin-top: -1rem;
     background: var(--neutral-100);
-    font-size: 2rem;
+    font-size: 1.25rem;
 }
 
 .scoreBox h3 {
     background: var(--neutral-100);
+    font-size: 1rem;
     border-bottom: solid 2px var(--neutral-700);
 }
 
