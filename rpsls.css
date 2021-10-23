@@ -36,6 +36,7 @@ body,
     flex-direction: column;
     height: 100%;
     width: 100%;
+    max-height: 100%;
     max-width: 100%;
     margin: 0;
     padding: 0;
@@ -82,13 +83,31 @@ body,
     grid-area: player;
 }
 
+#playerPlayIcon {
+    border-radius: 50%;
+}
+
 #compPlay {
     grid-area: comp;
+}
+
+#compPlayIcon {
+    border-radius: 50%;
 }
 
 #playerScoreBox {
     grid-area: pscore;
 }
+
+/*
+#playerScoreText {
+    color: blue;
+}
+
+#compScoreText {
+    color: pink;
+}
+*/
 
 #compScoreBox {
     grid-area: cscore;
@@ -124,8 +143,8 @@ body,
 }
 
 .choice {
-    height: 3.5rem;
-    width: 3.5rem;
+    height: 3rem;
+    width: 3rem;
     margin: 0 auto;
     padding: 1px;
     background: var(--neutral-100);
@@ -161,19 +180,21 @@ body,
 }
 
 #resultContainer {
-    height: auto;
-    width: 85%;
+    display: grid;
+    grid-template-rows: 40% 1fr;
+    height: 100%;
+    width: 90%;
     text-align: center;
     margin: 0 auto;
-    font-size: 1rem;
+    padding: 0;
 }
 
-#resultText {
-    font-size: 1rem;
-}
-
-#resultContainer p {
+#winLoseContainer p {
     font-size: 1.25rem;
+}
+
+.result {
+    font-size: 1rem;
     line-height: 2rem;
 }
 
@@ -183,47 +204,34 @@ body,
 
 .grey {
     color: var(--neutral-550);
-    background: var(--neutral-50);
-    text-shadow: 0px 0px 3px var(--neutral-700);
     border: 2px var(--neutral-550) solid;
-    border-radius: 8px;
-    padding: 4px 12px;
 }
 
 .beige {
     color: var(--beige-200);
-    background: var(--neutral-50);
-    text-shadow: 0px 0px 2px var(--neutral-700);
     border: 2px var(--beige-200) solid;
-    border-radius: 8px;
-    padding: 4px 12px;
 }
 
 .yellow {
     color: var(--yellow-200);
-    background: var(--neutral-50);
-    text-shadow: 0px 0px 2px var(--neutral-700);
     border: 2px var(--yellow-200) solid;
-    border-radius: 8px;
-    padding: 4px 12px;
 }
 
 .green {
     color: var(--green-150);
-    background: var(--neutral-50);
-    text-shadow: 0px 0px 2px var(--neutral-700);
     border: 2px var(--green-150) solid;
-    border-radius: 8px;
-    padding: 4px 12px;
 }
 
 .blue {
     color: var(--blue-150);
+    border: 2px var(--blue-150) solid;
+}
+
+.choiceBorder {
     background: var(--neutral-50);
     text-shadow: 0px 0px 2px var(--neutral-700);
-    border: 2px var(--blue-150) solid;
     border-radius: 8px;
-    padding: 4px 12px;
+    padding: 2px 6px;
 }
 
 .win {
@@ -283,7 +291,7 @@ body,
     align-items: center;
     text-align: center;
     height: 100%;
-    width: 90%;
+    width: 100%;
     padding: 0 10px;
     background: var(--neutral-100);
 }
@@ -394,6 +402,14 @@ body,
 
     #middleContainer {
         padding-bottom: 1rem;
+    }
+
+    .scoreBox p {
+        font-size: 1.75rem;
+    }
+
+    .scoreBox h3 {
+        font-size: 1.25rem;
     }
 
     .choice {

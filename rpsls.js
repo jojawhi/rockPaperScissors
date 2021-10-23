@@ -9,8 +9,6 @@ let playerSelection;
 let computerScore = 0;
 let playerScore = 0;
 
-let result = "";
-
 // function to generate a random number
 function random(mn, mx) {
     return Math.floor(Math.random() * (mx - mn));
@@ -23,22 +21,65 @@ function computerPlay() {
     
 }
 
-/*
-// function to determine user selection, second parameter of playRound function
-function userPlay() {
-
-    playerSelection = prompt("Rock, Paper, Scissors, Lizard, Spock...!");
-    return playerSelection;
-
-}
-*/
-
 //Results
 
 const playerWinText = document.querySelector("#playerWinText");
 const playerLoseText = document.querySelector("#playerLoseText");
 const tieText = document.querySelector("#tieText");
+
 const compWinRockScissors = document.querySelector("#compWinRockScissors");
+const compWinRockLizard = document.querySelector("#compWinRockLizard");
+const compWinScissorsPaper = document.querySelector("#compWinScissorsPaper");
+const compWinScissorsLizard = document.querySelector("#compWinScissorsLizard");
+const compWinPaperRock = document.querySelector("#compWinPaperRock");
+const compWinPaperSpock = document.querySelector("#compWinPaperSpock");
+const compWinLizardSpock = document.querySelector("#compWinLizardSpock");
+const compWinLizardPaper = document.querySelector("#compWinLizardPaper");
+const compWinSpockRock = document.querySelector("#compWinSpockRock");
+const compWinSpockScissors = document.querySelector("#compWinSpockScissors");
+
+const playWinRockScissors = document.querySelector("#playWinRockScissors");
+const playWinRockLizard = document.querySelector("#playWinRockLizard");
+const playWinScissorsPaper = document.querySelector("#playWinScissorsPaper");
+const playWinScissorsLizard = document.querySelector("#playWinScissorsLizard");
+const playWinPaperRock = document.querySelector("#playWinPaperRock");
+const playWinPaperSpock = document.querySelector("#playWinPaperSpock");
+const playWinLizardSpock = document.querySelector("#playWinLizardSpock");
+const playWinLizardPaper = document.querySelector("#playWinLizardPaper");
+const playWinSpockRock = document.querySelector("#playWinSpockRock");
+const playWinSpockScissors = document.querySelector("#playWinSpockScissors");
+
+function setResult() {
+
+    if (playerWin === true) {
+        playerWinText.classList.remove("hidden");
+        setTimeout(function() {
+            playerWinText.classList.add("hidden");
+        }, 4000);
+        playerWinText.classList.add("fadeIn");
+        setTimeout(function() {
+            playerWinText.classList.remove("fadeIn");
+        }, 4000);
+    } else if (compWin === true) {
+        playerLoseText.classList.remove("hidden");
+        setTimeout(function() {
+            playerLoseText.classList.add("hidden");
+        }, 4000);
+        playerLoseText.classList.add("fadeIn");
+        setTimeout(function() {
+            playerLoseText.classList.remove("fadeIn");
+        }, 4000);
+    } else {
+        tieText.classList.remove("hidden");
+        setTimeout(function() {
+            tieText.classList.add("hidden");
+        }, 4000);
+        tieText.classList.add("fadeIn");
+        setTimeout(function() {
+            tieText.classList.remove("fadeIn");
+        }, 4000);
+    }
+}
 
 //single round function, takes the computerPlay and userPlay functions as arguments
 
@@ -51,108 +92,248 @@ function playRound(comp, player) {
             computerScore++;
             compWin = true;
             playerWin = false;
-            result = compWinRockScissors.innerHTML;          
+            compWinRockScissors.classList.remove("hidden");
+            setTimeout(function() {
+                compWinRockScissors.classList.add("hidden");
+            }, 4000);
+            compWinRockScissors.classList.add("fadeIn");
+            setTimeout(function() {
+                compWinRockScissors.classList.remove("fadeIn");
+            }, 4000);         
         } else if (comp.toLowerCase() == "rock" && player.toLowerCase() == "lizard") {
             computerScore++;
             compWin = true;
             playerWin = false;
-            result = "Computer's Rock CRUSHES your Lizard! You lose!";
+            compWinRockScissors.classList.remove("hidden");
+            setTimeout(function() {
+                compWinRockLizard.classList.add("hidden");
+            }, 4000);
+            compWinRockScissors.classList.add("fadeIn");
+            setTimeout(function() {
+                compWinRockLizard.classList.remove("fadeIn");
+            }, 4000);  
         } else if (comp.toLowerCase() == "scissors" && player.toLowerCase() == "paper") {
             computerScore++;
             compWin = true;
             playerWin = false;
-            result = "Computer's Scissors CUTS your Paper! You lose!";
+            compWinScissorsPaper.classList.remove("hidden");
+            setTimeout(function() {
+                compWinScissorsPaper.classList.add("hidden");
+            }, 4000);
+            compWinScissorsPaper.classList.add("fadeIn");
+            setTimeout(function() {
+                compWinScissorsPaper.classList.remove("fadeIn");
+            }, 4000);  
         } else if (comp.toLowerCase() == "scissors" && player.toLowerCase() == "lizard") {
             computerScore++;
             compWin = true;
             playerWin = false;
-            result = "Computer's Scissors DECAPITATES your Lizard! You lose!";
+            compWinScissorsLizard.classList.remove("hidden");
+            setTimeout(function() {
+                compWinScissorsLizard.classList.add("hidden");
+            }, 4000);
+            compWinScissorsLizard.classList.add("fadeIn");
+            setTimeout(function() {
+                compWinScissorsLizard.classList.remove("fadeIn");
+            }, 4000);
         } else if (comp.toLowerCase() == "paper" && player.toLowerCase() == "rock") {
             computerScore++;
             compWin = true;
             playerWin = false;
-            result = "Computer's Paper COVERS your Rock! You lose!";                    
+            compWinPaperRock.classList.remove("hidden");
+            setTimeout(function() {
+                compWinPaperRock.classList.add("hidden");
+            }, 4000);
+            compWinPaperRock.classList.add("fadeIn");
+            setTimeout(function() {
+                compWinPaperRock.classList.remove("fadeIn");
+            }, 4000);                    
         } else if (comp.toLowerCase() == "paper" && player.toLowerCase() == "spock") {
             computerScore++;
             compWin = true;
             playerWin = false;
-            result = "Computer's Paper DISPROVES your Spock! You lose!";                    
+            compWinPaperSpock.classList.remove("hidden");
+            setTimeout(function() {
+                compWinPaperSpock.classList.add("hidden");
+            }, 4000);
+            compWinPaperSpock.classList.add("fadeIn");
+            setTimeout(function() {
+                compWinPaperSpock.classList.remove("fadeIn");
+            }, 4000);                    
         } else if (comp.toLowerCase() == "lizard" && player.toLowerCase() == "spock") {
             computerScore++;
             compWin = true;
             playerWin = false;
-            result = "Computer's Lizard POSIONS your Spock! You lose!";                    
+            compWinLizardSpock.classList.remove("hidden");
+            setTimeout(function() {
+                compWinLizardSpock.classList.add("hidden");
+            }, 4000);
+            compWinLizardSpock.classList.add("fadeIn");
+            setTimeout(function() {
+                compWinLizardSpock.classList.remove("fadeIn");
+            }, 4000);                    
         } else if (comp.toLowerCase() == "lizard" && player.toLowerCase() == "paper") {
             computerScore++;
             compWin = true;
             playerWin = false;
-            result = "Computer's Lizard EATS your Paper! You lose!";                    
+            compWinLizardPaper.classList.remove("hidden");
+            setTimeout(function() {
+                compWinLizardPaper.classList.add("hidden");
+            }, 4000);
+            compWinLizardPaper.classList.add("fadeIn");
+            setTimeout(function() {
+                compWinLizardPaper.classList.remove("fadeIn");
+            }, 4000);                   
         } else if (comp.toLowerCase() == "spock" && player.toLowerCase() == "rock") {
             computerScore++;
             compWin = true;
             playerWin = false;
-            result = "Computer's Spock VAPORIZES your Rock! You lose!";                    
+            compWinSpockRock.classList.remove("hidden");
+            setTimeout(function() {
+                compWinSpockRock.classList.add("hidden");
+            }, 4000);
+            compWinSpockRock.classList.add("fadeIn");
+            setTimeout(function() {
+                compWinSpockRock.classList.remove("fadeIn");
+            }, 4000);                  
         } else if (comp.toLowerCase() == "spock" && player.toLowerCase() == "scissors") {
             computerScore++;
             compWin = true;
             playerWin = false;
-            result = "Computer's Spock SMASHES your Scissors! You lose!";                    
+            compWinSpockScissors.classList.remove("hidden");
+            setTimeout(function() {
+                compWinSpockScissors.classList.add("hidden");
+            }, 4000);
+            compWinSpockScissors.classList.add("fadeIn");
+            setTimeout(function() {
+                compWinSpockScissors.classList.remove("fadeIn");
+            }, 4000);                   
         } else if (comp.toLowerCase() == "rock" && player.toLowerCase() == "paper") {
             playerScore++;
             playerWin = true;
             compWin = false;
-            result = "Your Paper COVERS computer's Rock! You win!";                   
+            playWinPaperRock.classList.remove("hidden");
+            setTimeout(function() {
+                playWinPaperRock.classList.add("hidden");
+            }, 4000);
+            playWinPaperRock.classList.add("fadeIn");
+            setTimeout(function() {
+                playWinPaperRock.classList.remove("fadeIn");
+            }, 4000);                     
         } else if (comp.toLowerCase() == "spock" && player.toLowerCase() == "paper") {
             playerScore++;
             playerWin = true;
             compWin = false;
-            result = "Your Paper DISPROVES computer's Spock! You win!";                   
+            playWinPaperSpock.classList.remove("hidden");
+            setTimeout(function() {
+                playWinPaperSpock.classList.add("hidden");
+            }, 4000);
+            playWinPaperSpock.classList.add("fadeIn");
+            setTimeout(function() {
+                playWinPaperSpock.classList.remove("fadeIn");
+            }, 4000);                     
         } else if (comp.toLowerCase() == "paper" && player.toLowerCase() == "scissors") {
             playerScore++;
             playerWin = true;
             compWin = false;
-            result = "Your Scissors CUTS computer's Paper! You win!";
+            playWinScissorsPaper.classList.remove("hidden");
+            setTimeout(function() {
+                playWinScissorsPaper.classList.add("hidden");
+            }, 4000);
+            playWinScissorsPaper.classList.add("fadeIn");
+            setTimeout(function() {
+                playWinScissorsPaper.classList.remove("fadeIn");
+            }, 4000); 
         } else if (comp.toLowerCase() == "lizard" && player.toLowerCase() == "scissors") {
             playerScore++;
             playerWin = true;
             compWin = false;
-            result = "Your Scissors DECAPITATES computer's Lizard! You win!";
+            playWinScissorsLizard.classList.remove("hidden");
+            setTimeout(function() {
+                playWinScissorsLizard.classList.add("hidden");
+            }, 4000);
+            playWinScissorsLizard.classList.add("fadeIn");
+            setTimeout(function() {
+                playWinScissorsLizard.classList.remove("fadeIn");
+            }, 4000);
         } else if (comp.toLowerCase() == "scissors" && player.toLowerCase() == "rock") {
             playerScore++;
             playerWin = true;
             compWin = false;
-            result = "Your Rock CRUSHES computer's Scissors! You win!";
+            playWinRockScissors.classList.remove("hidden");
+            setTimeout(function() {
+                playWinRockScissors.classList.add("hidden");
+            }, 4000);
+            playWinRockScissors.classList.add("fadeIn");
+            setTimeout(function() {
+                playWinRockScissors.classList.remove("fadeIn");
+            }, 4000);
         } else if (comp.toLowerCase() == "lizard" && player.toLowerCase() == "rock") {
             playerScore++;
             playerWin = true;
             compWin = false;
-            result = "Your Rock CRUSHES computer's Lizard! You win!";
+            playWinRockLizard.classList.remove("hidden");
+            setTimeout(function() {
+                playWinRockLizard.classList.add("hidden");
+            }, 4000);
+            playWinRockLizard.classList.add("fadeIn");
+            setTimeout(function() {
+                playWinRockLizard.classList.remove("fadeIn");
+            }, 4000);
         } else if (comp.toLowerCase() == "spock" && player.toLowerCase() == "lizard") {
             playerScore++;
             playerWin = true;
             compWin = false;
-            result = "Your Lizard POSIONS computer's Spock! You win!";
+            playWinLizardSpock.classList.remove("hidden");
+            setTimeout(function() {
+                playWinLizardSpock.classList.add("hidden");
+            }, 4000);
+            playWinLizardSpock.classList.add("fadeIn");
+            setTimeout(function() {
+                playWinLizardSpock.classList.remove("fadeIn");
+            }, 4000);
         } else if (comp.toLowerCase() == "paper" && player.toLowerCase() == "lizard") {
             playerScore++;
             playerWin = true;
             compWin = false;
-            result = "Your Lizard EATS computer's Paper! You win!";
+            playWinLizardPaper.classList.remove("hidden");
+            setTimeout(function() {
+                playWinLizardPaper.classList.add("hidden");
+            }, 4000);
+            playWinLizardPaper.classList.add("fadeIn");
+            setTimeout(function() {
+                playWinLizardPaper.classList.remove("fadeIn");
+            }, 4000);
         } else if (comp.toLowerCase() == "rock" && player.toLowerCase() == "spock") {
             playerScore++;
             playerWin = true;
             compWin = false;
-            result = "Your Spock VAPORIZES computer's Rock! You win!";
+            playWinSpockRock.classList.remove("hidden");
+            setTimeout(function() {
+                playWinSpockRock.classList.add("hidden");
+            }, 4000);
+            playWinSpockRock.classList.add("fadeIn");
+            setTimeout(function() {
+                playWinSpockRock.classList.remove("fadeIn");
+            }, 4000);
         } else if (comp.toLowerCase() == "scissors" && player.toLowerCase() == "spock") {
             playerScore++;
             playerWin = true;
             compWin = false;
-            result = "Your Spock SMASHES computer's Scissors! You win!";
+            playWinSpockScissors.classList.remove("hidden");
+            setTimeout(function() {
+                playWinSpockScissors.classList.add("hidden");
+            }, 4000);
+            playWinSpockScissors.classList.add("fadeIn");
+            setTimeout(function() {
+                playWinSpockScissors.classList.remove("fadeIn");
+            }, 4000);
         } else if (comp.toLowerCase() == player.toLowerCase()) {
             playerWin = false;
             compWin = false;
-            result = "Both chose " + playerSelection + ". " + "It's a tie!";
         }
 }
+
 /*
 // the game function, which loops 5 times and runs the playRound function each time, running results to the console
 function game() {
@@ -188,6 +369,7 @@ rockBtn.addEventListener("click", () => {
     fadeIn();
     setScoreColour();
     disableButtons();
+    setIconBackground();
 });
 
 const paperBtn = document.querySelector("#paperBtn");
@@ -202,6 +384,7 @@ paperBtn.addEventListener("click", () => {
     fadeIn();
     setScoreColour();
     disableButtons();
+    setIconBackground();
 });
 
 const scissorsBtn = document.querySelector("#scissorsBtn");
@@ -216,6 +399,7 @@ scissorsBtn.addEventListener("click", () => {
     fadeIn();
     setScoreColour();
     disableButtons();
+    setIconBackground();
 });
 
 const lizardBtn = document.querySelector("#lizardBtn");
@@ -230,6 +414,7 @@ lizardBtn.addEventListener("click", () => {
     fadeIn();
     setScoreColour();
     disableButtons();
+    setIconBackground();
 });
 
 const spockBtn = document.querySelector("#spockBtn");
@@ -244,25 +429,22 @@ spockBtn.addEventListener("click", () => {
     fadeIn();
     setScoreColour();
     disableButtons();
+    setIconBackground();
 });
 
-const buttons = document.querySelectorAll(".choiceButton");
+// const buttons = document.querySelectorAll(".choiceButton");
 
 //Score boxes
 
 const compScoreBox = document.querySelector("#compScoreBox");
 
-const compScoreText = document.createElement("p");
+const compScoreText = document.querySelector("#compScoreText");
 compScoreText.textContent = computerScore;
-
-compScoreBox.appendChild(compScoreText);
 
 const playerScoreBox = document.querySelector("#playerScoreBox");
 
-const playerScoreText = document.createElement("p");
+const playerScoreText = document.querySelector("#playerScoreText");
 playerScoreText.textContent = playerScore;
-
-playerScoreBox.appendChild(playerScoreText);
 
 // Plays
 
@@ -273,6 +455,17 @@ function showPlayerPlay(playerSelection) {
 
     const playerPlayIcon = document.querySelector("#playerPlayIcon");
     playerPlayIcon.setAttribute('src', `img/${playerSelection}.svg`);
+    if (playerSelection.toLowerCase() == "rock") {
+        playerPlayIcon.style.backgroundColor = "var(--neutral-500)";
+    } else if (playerSelection.toLowerCase() == "paper") {
+        playerPlayIcon.style.backgroundColor = "var(--beige-100)";
+    } else if (playerSelection.toLowerCase() == "scissors") {
+        playerPlayIcon.style.backgroundColor = "var(--yellow-100)";
+    } else if (playerSelection.toLowerCase() == "lizard") {
+        playerPlayIcon.style.backgroundColor = "var(--green-100)";
+    } else if (playerSelection.toLowerCase() == "spock") {
+        playerPlayIcon.style.backgroundColor = "var(--blue-100)";
+    }
 
 }
 
@@ -280,24 +473,84 @@ function showCompPlay(computerSelection) {
 
     const compPlayIcon = document.querySelector("#compPlayIcon");
     compPlayIcon.setAttribute('src', `img/${computerSelection}.svg`);
+    if (computerSelection == "Rock") {
+        compPlayIcon.style.backgroundColor = "var(--neutral-500)";
+    } else if (computerSelection.toLowerCase() == "paper") {
+        compPlayIcon.style.backgroundColor = "var(--beige-100)";
+    } else if (computerSelection.toLowerCase() == "scissors") {
+        compPlayIcon.style.backgroundColor = "var(--yellow-100)";
+    } else if (computerSelection.toLowerCase() == "lizard") {
+        compPlayIcon.style.backgroundColor = "var(--green-100)";
+    } else if (computerSelection.toLowerCase() == "spock") {
+        compPlayIcon.style.backgroundColor = "var(--blue-100)";
+    }
 
 }
+
+/*
+
+// Icon Backgrounds
+
+function setIconBackground() {
+
+    //const playerPlayIcon = document.querySelector("#playerPlayIcon");
+    //const compPlayIcon = document.querySelector("#compPlayIcon");
+
+    if (playerSelection.toLowerCase() == "rock") {
+        document.getElementById("playerPlayIcon").style.backgroundColor = "blue";
+    } else if (playerSelection.toLowerCase() == "paper") {
+        document.getElementById("playerPlayIcon").style.backgroundColor = "blue";
+    } else if (playerSelection.toLowerCase() == "scissors") {
+        document.getElementById("playerPlayIcon").style.backgroundColor = "blue";
+    } else if (playerSelection.toLowerCase() == "lizard") {
+        document.getElementById("playerPlayIcon").style.backgroundColor = "blue";
+    } else if (playerSelection.toLowerCase() == "spock") {
+        document.getElementById("playerPlayIcon").style.backgroundColor = "blue";
+    }
+
+    if (computerSelection.toLowerCase() == "rock") {
+        document.getElementById("compPlayIcon").style.backgroundColor = "blue";
+    } else if (computerSelection.toLowerCase() == "paper") {
+        document.getElementById("compPlayIcon").style.backgroundColor = "blue";
+    } else if (computerSelection.toLowerCase() == "scissors") {
+        document.getElementById("compPlayIcon").style.backgroundColor = "blue";
+    } else if (computerSelection.toLowerCase() == "lizard") {
+        document.getElementById("compPlayIcon").style.backgroundColor = "blue";
+    } else if (computerSelection.toLowerCase() == "spock") {
+        document.getElementById("compPlayIcon").style.backgroundColor = "blue";
+    }
+
+}
+
+*/
 
 // Fades
 
 function fadeIn() {
     playerPlay.classList.add("fadeIn");
-    setTimeout(function() {playerPlay.classList.remove("fadeIn");}, 4000);
+    setTimeout(function() {
+        playerPlay.classList.remove("fadeIn");
+    }, 4000);
     compPlay.classList.add("fadeIn");
-    setTimeout(function() {compPlay.classList.remove("fadeIn");}, 4000);
+    setTimeout(function() {
+        compPlay.classList.remove("fadeIn");
+    }, 4000);
     resultText.classList.add("fadeIn");
-    setTimeout(function() {resultText.classList.remove("fadeIn");}, 4000);
+    setTimeout(function() {
+        resultText.classList.remove("fadeIn");
+    }, 4000);
     playerWinText.classList.add("fadeIn");
-    setTimeout(function() {playerWinText.classList.remove("fadeIn");}, 4000);
+    setTimeout(function() {
+        playerWinText.classList.remove("fadeIn");
+    }, 4000);
     playerLoseText.classList.add("fadeIn");
-    setTimeout(function() {playerLoseText.classList.remove("fadeIn");}, 4000);
+    setTimeout(function() {
+        playerLoseText.classList.remove("fadeIn");
+    }, 4000);
     tieText.classList.add("fadeIn");
-    setTimeout(function() {tieText.classList.remove("fadeIn");}, 4000);
+    setTimeout(function() {
+        tieText.classList.remove("fadeIn");
+    }, 4000);
 }
 
 // Score colors - needed to create playerWin and compWin variables to make this work
@@ -353,27 +606,6 @@ function disableButtons() {
 // Result display
 
 const resultContainer = document.querySelector("#resultContainer");
-const resultText = document.querySelector("#resultText");
+// const resultText = document.querySelector("#resultText");
 
-
-function setResult() {
-
-    if (playerWin == true) {
-        playerWinText.classList.remove("hidden");
-        setTimeout(function() {
-            playerWinText.classList.add("hidden");
-        }, 4000);
-    } else if (compWin == true) {
-        playerLoseText.classList.remove("hidden");
-        setTimeout(function() {
-            playerLoseText.classList.add("hidden");
-        }, 4000);
-    } else {
-        tieText.classList.remove("hidden");
-        setTimeout(function() {
-            tieText.classList.add("hidden");
-        }, 4000);
-    }
-    resultText.textContent = result;
-}
 
