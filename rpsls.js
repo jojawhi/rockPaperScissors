@@ -441,8 +441,6 @@ const compScoreBox = document.querySelector("#compScoreBox");
 const compScoreText = document.querySelector("#compScoreText");
 compScoreText.textContent = computerScore;
 
-const playerScoreBox = document.querySelector("#playerScoreBox");
-
 const playerScoreText = document.querySelector("#playerScoreText");
 playerScoreText.textContent = playerScore;
 
@@ -487,43 +485,6 @@ function showCompPlay(computerSelection) {
 
 }
 
-/*
-
-// Icon Backgrounds
-
-function setIconBackground() {
-
-    //const playerPlayIcon = document.querySelector("#playerPlayIcon");
-    //const compPlayIcon = document.querySelector("#compPlayIcon");
-
-    if (playerSelection.toLowerCase() == "rock") {
-        document.getElementById("playerPlayIcon").style.backgroundColor = "blue";
-    } else if (playerSelection.toLowerCase() == "paper") {
-        document.getElementById("playerPlayIcon").style.backgroundColor = "blue";
-    } else if (playerSelection.toLowerCase() == "scissors") {
-        document.getElementById("playerPlayIcon").style.backgroundColor = "blue";
-    } else if (playerSelection.toLowerCase() == "lizard") {
-        document.getElementById("playerPlayIcon").style.backgroundColor = "blue";
-    } else if (playerSelection.toLowerCase() == "spock") {
-        document.getElementById("playerPlayIcon").style.backgroundColor = "blue";
-    }
-
-    if (computerSelection.toLowerCase() == "rock") {
-        document.getElementById("compPlayIcon").style.backgroundColor = "blue";
-    } else if (computerSelection.toLowerCase() == "paper") {
-        document.getElementById("compPlayIcon").style.backgroundColor = "blue";
-    } else if (computerSelection.toLowerCase() == "scissors") {
-        document.getElementById("compPlayIcon").style.backgroundColor = "blue";
-    } else if (computerSelection.toLowerCase() == "lizard") {
-        document.getElementById("compPlayIcon").style.backgroundColor = "blue";
-    } else if (computerSelection.toLowerCase() == "spock") {
-        document.getElementById("compPlayIcon").style.backgroundColor = "blue";
-    }
-
-}
-
-*/
-
 // Fades
 
 function fadeIn() {
@@ -535,10 +496,13 @@ function fadeIn() {
     setTimeout(function() {
         compPlay.classList.remove("fadeIn");
     }, 4000);
+    /*
+    //This is the code that was preventing the score colour and disabled buttons from going through
     resultText.classList.add("fadeIn");
     setTimeout(function() {
         resultText.classList.remove("fadeIn");
     }, 4000);
+    */
     playerWinText.classList.add("fadeIn");
     setTimeout(function() {
         playerWinText.classList.remove("fadeIn");
@@ -556,15 +520,17 @@ function fadeIn() {
 // Score colors - needed to create playerWin and compWin variables to make this work
 
 function setScoreColour() {
+
+
     if (playerWin === true) {
-        playerScoreText.style.color = "green";
-        compScoreText.style.color = "red";
+        playerScoreText.style.color = "var(--green-200)";
+        compScoreText.style.color = "var(--red-100)";
     } else if (compWin === true) {
-        playerScoreText.style.color = "red";
-        compScoreText.style.color = "green";
+        playerScoreText.style.color = "var(--red-100)";
+        compScoreText.style.color = "var(--green-200)";
     } else if (compWin === false && playerWin === false ) {
-        playerScoreText.style.color = "orange";
-        compScoreText.style.color = "orange";
+        playerScoreText.style.color = "var(--yellow-200)";
+        compScoreText.style.color = "var(--yellow-200)";
     }
 }
 
