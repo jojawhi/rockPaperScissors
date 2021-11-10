@@ -11,9 +11,11 @@
 <body>
    
     <div id="pageContainer">
+
         <div id="titleContainer">
             <h1 id="title">ROCK PAPER SCISSORS LIZARD SPOCK!</h1>
         </div>
+
         <div id="topContainer">
             <div id="playContainer">
                 <div class="scoreBox" id="playerScoreBox">
@@ -41,12 +43,12 @@
         </div>
 
         <div id="resultContainer">
-            <!-- <p id="resultText" class="fade"></p> -->
             <div id="winLoseContainer">
                 <p id="playerWinText" class="bold win hidden fade">You WIN!</p>
-                <p id="playerLoseText" class="bold lose hidden fade">You LOSE!</p>
+                <p id="compWinText" class="bold lose hidden fade">You LOSE!</p>
                 <p id="tieText" class="bold tie hidden fade">It's a TIE!</p>
             </div>
+
             <div id="resultTextContainer">
                 <p id="compWinRockScissors" class="result hidden">Computer's <span class="bold grey choiceBorder">ROCK</span> <span class="bold">CRUSHES</span> your <span class="bold yellow choiceBorder">SCISSORS</span> !</p>
                 <p id="compWinRockLizard" class="result hidden">Computer's <span class="bold grey choiceBorder">ROCK</span> <span class="bold">CRUSHES</span> your <span class="bold green choiceBorder">LIZARD</span> !</p>
@@ -58,6 +60,7 @@
                 <p id="compWinLizardPaper" class="result hidden">Computer's <span class="bold green choiceBorder">LIZARD</span> <span class="bold">EATS</span> your <span class="bold beige choiceBorder">PAPER</span> !</p>
                 <p id="compWinSpockRock" class="result hidden">Computer's <span class="bold blue choiceBorder">SPOCK</span> <span class="bold">VAPORIZES</span> your <span class="bold grey choiceBorder">ROCK</span> !</p>
                 <p id="compWinSpockScissors" class="result hidden">Computer's <span class="bold blue choiceBorder">SPOCK</span> <span class="bold">SMASHES</span> your <span class="bold yellow choiceBorder">SCISSORS</span> !</p>
+                
                 <p id="playWinRockScissors" class="result hidden">Your <span class="bold grey choiceBorder">ROCK</span> <span class="bold">CRUSHES</span> Computer's <span class="bold yellow choiceBorder">SCISSORS</span> !</p>
                 <p id="playWinRockLizard" class="result hidden">Your <span class="bold grey choiceBorder">ROCK</span> <span class="bold">CRUSHES</span> Computer's <span class="bold green choiceBorder">LIZARD</span> !</p>
                 <p id="playWinScissorsPaper" class="result hidden">Your <span class="bold yellow choiceBorder">SCISSORS</span> <span class="bold">CUTS</span> Computer's <span class="bold beige choiceBorder">PAPER</span> !</p>
@@ -71,9 +74,9 @@
             </div>
         </div>
 
-        <div id="middleContainer">
+        <div id="selectContainer">
 
-            <div id="headingContainer"><h2>MAKE YOUR SELECTION</h2></div>
+            <div id="buttonHeadingContainer"><h2>MAKE YOUR SELECTION</h2></div>
             <div id="buttonContainer">
 
                 <div class="choice" id="rockChoice">
@@ -108,6 +111,12 @@
 
             </div>
         </div>
+
+        
+        <div id="footerContainer">
+            <p id="footerText">Created for The Odin Project by <a href="https://github.com/jojawhi" id="gitHubLink">Josh White <img src="img/github-dark.svg" alt="github logo" height="20" width="20"></a></p>
+        </div>
+        
 
     </div>
     

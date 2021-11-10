@@ -32,8 +32,6 @@
 html,
 body,
 #pageContainer {
-    display: flex;
-    flex-direction: column;
     height: 100%;
     width: 100%;
     max-height: 100%;
@@ -45,6 +43,9 @@ body,
 }
 
 #pageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 10px;
 }
 
@@ -99,21 +100,11 @@ body,
     grid-area: pscore;
 }
 
-/*
-#playerScoreText {
-    color: blue;
-}
-
-#compScoreText {
-    color: pink;
-}
-*/
-
 #compScoreBox {
     grid-area: cscore;
 }
 
-#middleContainer {
+#selectContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -124,7 +115,7 @@ body,
     padding-bottom: 1rem;
 }
 
-#headingContainer {
+#buttonHeadingContainer {
     width: 100%;
     text-align: center;
 }
@@ -181,12 +172,36 @@ body,
 
 #resultContainer {
     display: grid;
-    grid-template-rows: 40% 1fr;
-    height: 100%;
-    width: 90%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: 
+        "winLose"
+        "resultText";
+    height: auto;
+    min-height: 30%;
+    width: 100%;
+    justify-content: center;
     text-align: center;
     margin: 0 auto;
-    padding: 0;
+    /*
+    padding: 5px;
+    background: var(--neutral-50);
+    border-radius: 15px;
+    box-shadow: 0 0 8px var(--neutral-500);
+    */
+}
+
+#resultTextContainer {
+    grid-area: resultText;
+    height: auto;
+    align-items: space-around;
+    justify-content: center;
+}
+
+#winLoseContainer {
+    grid-area: winLose;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 #winLoseContainer p {
@@ -383,6 +398,15 @@ body,
     background: var(--blue-150);
 }
 
+#footerContainer {
+    display: none;
+    position: relative;
+    bottom: 0;
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+
 /*Media Queries*/
 
 @media only screen and (min-width: 480px) {
@@ -392,16 +416,33 @@ body,
         width: 4rem;
     }
 
-    #resultText {
+    .scoreBox p {
         font-size: 1.5rem;
     }
+    
+    .scoreBox h3 {
+        font-size: 1.25rem;
+    }
 
+    #winLoseContainer p {
+        font-size: 1.75rem;
+    }
+
+    .result {
+        font-size: 1.25rem;
+        line-height: 2.5rem;
+    }
+    
 }
 
 @media only screen and (min-width: 600px) {
 
     #middleContainer {
         padding-bottom: 1rem;
+    }
+
+    #resultContainer {
+        grid-template-rows: 4rem 8rem;
     }
 
     .scoreBox p {
@@ -417,6 +458,10 @@ body,
         width: 5rem;
     }
 
+    #footerContainer {
+        display: initial;
+    }
+
 }
 
 @media only screen and (min-width: 800px) {
@@ -430,8 +475,13 @@ body,
         width: 7rem;
     }
 
-    #resultText {
+    #resultTextContainer {
+        padding-top: 3rem;
+    }
+
+    .result {
         font-size: 2rem;
+        line-height: 4rem;
     }
 
 }
@@ -453,6 +503,15 @@ body,
     .choice {
         height: 10rem;
         width: 10rem;
+    }
+
+    .result {
+        font-size: 2.25rem;
+        line-height: 4rem;
+    }
+
+    #selectContainer {
+        padding-top: 4rem;
     }
 
 }

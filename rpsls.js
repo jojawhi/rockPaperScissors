@@ -24,7 +24,7 @@ function computerPlay() {
 //Results
 
 const playerWinText = document.querySelector("#playerWinText");
-const playerLoseText = document.querySelector("#playerLoseText");
+const compWinText = document.querySelector("#compWinText");
 const tieText = document.querySelector("#tieText");
 
 const compWinRockScissors = document.querySelector("#compWinRockScissors");
@@ -61,13 +61,13 @@ function setResult() {
             playerWinText.classList.remove("fadeIn");
         }, 4000);
     } else if (compWin === true) {
-        playerLoseText.classList.remove("hidden");
+        compWinText.classList.remove("hidden");
         setTimeout(function() {
-            playerLoseText.classList.add("hidden");
+            compWinText.classList.add("hidden");
         }, 4000);
-        playerLoseText.classList.add("fadeIn");
+        compWinText.classList.add("fadeIn");
         setTimeout(function() {
-            playerLoseText.classList.remove("fadeIn");
+            compWinText.classList.remove("fadeIn");
         }, 4000);
     } else {
         tieText.classList.remove("hidden");
@@ -99,7 +99,7 @@ function playRound(comp, player) {
             compWinRockScissors.classList.add("fadeIn");
             setTimeout(function() {
                 compWinRockScissors.classList.remove("fadeIn");
-            }, 4000);         
+            }, 4000);       
         } else if (comp.toLowerCase() == "rock" && player.toLowerCase() == "lizard") {
             computerScore++;
             compWin = true;
@@ -321,12 +321,13 @@ function playRound(comp, player) {
             playerWin = true;
             compWin = false;
             playWinSpockScissors.classList.remove("hidden");
-            setTimeout(function() {
-                playWinSpockScissors.classList.add("hidden");
-            }, 4000);
+          
             playWinSpockScissors.classList.add("fadeIn");
             setTimeout(function() {
                 playWinSpockScissors.classList.remove("fadeIn");
+            }, 4000);
+            setTimeout(function() {
+                playWinSpockScissors.classList.add("hidden");
             }, 4000);
         } else if (comp.toLowerCase() == player.toLowerCase()) {
             playerWin = false;
@@ -456,7 +457,7 @@ function showPlayerPlay(playerSelection) {
     if (playerSelection.toLowerCase() == "rock") {
         playerPlayIcon.style.backgroundColor = "var(--neutral-500)";
     } else if (playerSelection.toLowerCase() == "paper") {
-        playerPlayIcon.style.backgroundColor = "var(--beige-100)";
+        playerPlayIcon.style.backgroundColor = "var(--beige-150)";
     } else if (playerSelection.toLowerCase() == "scissors") {
         playerPlayIcon.style.backgroundColor = "var(--yellow-100)";
     } else if (playerSelection.toLowerCase() == "lizard") {
@@ -474,7 +475,7 @@ function showCompPlay(computerSelection) {
     if (computerSelection == "Rock") {
         compPlayIcon.style.backgroundColor = "var(--neutral-500)";
     } else if (computerSelection.toLowerCase() == "paper") {
-        compPlayIcon.style.backgroundColor = "var(--beige-100)";
+        compPlayIcon.style.backgroundColor = "var(--beige-150)";
     } else if (computerSelection.toLowerCase() == "scissors") {
         compPlayIcon.style.backgroundColor = "var(--yellow-100)";
     } else if (computerSelection.toLowerCase() == "lizard") {
@@ -507,9 +508,9 @@ function fadeIn() {
     setTimeout(function() {
         playerWinText.classList.remove("fadeIn");
     }, 4000);
-    playerLoseText.classList.add("fadeIn");
+    compWinText.classList.add("fadeIn");
     setTimeout(function() {
-        playerLoseText.classList.remove("fadeIn");
+        compWinText.classList.remove("fadeIn");
     }, 4000);
     tieText.classList.add("fadeIn");
     setTimeout(function() {
@@ -575,3 +576,19 @@ const resultContainer = document.querySelector("#resultContainer");
 // const resultText = document.querySelector("#resultText");
 
 
+
+
+/*
+
+// To-do
+
+- clean up CSS
+- add rules section content, style, and JS to show and hide
+- add round history style and JS to populate, show, and hide
+
+//Known bugs
+- A spacing issue happens when several plays are done in a row. It seems like the hidden class isn't being
+added back to some of the results, so they fade but still take up space on the page and push the new result 
+down. This occurs on Android mobile and desktop browsers.
+
+*/
