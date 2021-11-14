@@ -1,6 +1,6 @@
 # Jojawhi's Rock Paper Scissors assignment for The Odin Project
 
-For my attempt at the Rock Paper Scissors game, I wanted to make it a little more challenging. After going through the JS units in the course, I felt I had a good understanding of how to approach the basic project criteria, so I jazzed it up a little to enahnce my learning. I decided to do Rock Paper Scissors Lizard Spock, even though I was never a huge fan of Big Bang Theory, to get the extra practice with writing JS and to keep my CSS layout skills strong.
+For my attempt at the Rock Paper Scissors game, I wanted to make it a little more challenging. After going through the JS units in the course, I felt I had a good understanding of how to approach the basic project criteria, so I jazzed it up a little to enahnce my learning. I decided to do Rock Paper Scissors Lizard Spockto get the extra practice with writing JS and to keep my CSS layout skills strong. I was never a huge fan of Big Bang Theory, but I love me some Star Trek.
 
 ## Learning Focus
 
